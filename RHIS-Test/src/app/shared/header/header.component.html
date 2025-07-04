@@ -1,1 +1,20 @@
-<p>header works!</p>
+<header class="app-header d-flex align-items-center justify-content-between px-3 py-2 shadow-sm">
+  <div class="d-flex align-items-center">
+    <img src="content/img/logo.png" alt="Logo" class="logo me-3" />
+    <h5 class="page-title mb-0">Dashboard</h5>
+  </div>
+
+  <div class="d-flex align-items-center gap-3">
+    <button class="btn btn-link p-0 position-relative">
+      <i class="bi bi-bell fs-5"></i>
+      <span class="badge bg-danger position-absolute top-0 start-100 translate-middle p-1 rounded-circle">
+        <span class="visually-hidden">New alerts</span>
+      </span>
+    </button>
+
+    <div class="d-flex align-items-center gap-2">
+      <span class="user-name fw-semibold">John Doe</span>
+      <img src="assets/avatar.jpg" alt="Avatar" class="avatar rounded-circle" />
+    </div>
+  </div>
+</header>

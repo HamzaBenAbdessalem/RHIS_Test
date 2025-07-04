@@ -1,0 +1,29 @@
+.app-header {
+  background-color: var(--bg-secondary);
+  height: 64px;
+
+  .logo {
+    height: 32px;
+  }
+
+  .page-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .user-name {
+    font-size: 14px;
+    color: #374151;
+  }
+
+  .avatar {
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+  }
+
+  .bi-bell {
+    color: #6b7280;
+  }
+}

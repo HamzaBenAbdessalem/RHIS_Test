@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="row">
+  <div class="col-12">
+    <app-dashboard-header-card [tabs]="tabs"></app-dashboard-header-card>
+  </div>
+</div>
+<div class="row content">
+  <div class="col-md-6 col-12">
+    <app-dashboard-card [data]="rowsIdentity" [title]="'Identity'"></app-dashboard-card>
+    <app-dashboard-card [showText]=false [customClass]="'mt-4'" [data]="rowsCoo" [title]="'Coordonneés'"></app-dashboard-card>
+  </div>
+  <div class="col-md-6 col-12">
+    <app-dashboard-card [showText]=false [data]="rowsMat" [title]="'Matricules'"></app-dashboard-card>
+    <app-dashboard-card [showText]=false [customClass]="'mt-4'" [data]="rowsAut" [title]="'Autorisation de travail'"></app-dashboard-card>
+    <app-dashboard-card [showText]=false [customClass]="'mt-4'" [data]="rowsDip" [title]="'Diplomes'"></app-dashboard-card>
+  </div>
+</div>
+

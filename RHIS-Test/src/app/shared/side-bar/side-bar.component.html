@@ -1,0 +1,40 @@
+<nav class="sidebar d-flex flex-column py-3 px-2"
+     [class.expanded]="isHovered"
+     (mouseenter)="isHovered = true"
+     (mouseleave)="isHovered = false">
+
+  <ul class="nav flex-column gap-2">
+    <li class="nav-item" *ngFor="let item of menu">
+      <a href="#"
+         class="nav-link d-flex align-items-center gap-2 justify-content-between"
+         (click)="item.hasChildren ? toggleSubmenu(item.label) : null">
+
+        <div class="d-flex align-items-center gap-2">
+          <i [class]="item.icon"></i>
+          <span class="label" *ngIf="isHovered">{{ item.label }}</span>
+        </div>
+
+        <!-- Arrow icon if submenu -->
+        <i
+          class="bi ms-auto"
+          [ngClass]="{
+    'bi-chevron-down': openedSubmenu !== item.label,
+    'bi-chevron-up': openedSubmenu === item.label
+  }"
+          *ngIf="item.hasChildren && isHovered"
+        ></i>
+      </a>
+
+      <!-- Submenu -->
+      <ul
+        class="nav flex-column ps-4 submenu"
+        *ngIf="item.hasChildren && openedSubmenu === item.label && isHovered"
+        @submenuFade
+      >
+        <li class="nav-item" *ngFor="let sub of item.submenu">
+          <a href="#" class="nav-link sub-link">{{ sub.label }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>

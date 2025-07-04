@@ -1,0 +1,74 @@
+<div class="header-card rounded  pt-3 shadow-sm bg-white" >
+  <div class="d-flex align-items-center gap-3 border-bottom px-3 pb-3">
+    <!-- Profile Picture + Status -->
+    <div class="position-relative profile-pic-wrapper">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Profile" class="profile-pic rounded-circle" />
+      <span class="status-indicator bg-success"></span>
+      <span class="status-ring"></span>
+    </div>
+
+    <!-- Name and Role -->
+    <div>
+      <h5 class="mb-0 fw-bold">Lydia Bauer</h5>
+      <small class="text-muted">Responsable cuisine</small>
+    </div>
+
+    <div class="vr mx-3"></div>
+
+    <!-- Info Items -->
+    <div class="d-flex align-items-center gap-3 flex-wrap">
+
+      <div class="info-item d-flex align-items-center gap-1">
+        <i class="bi bi-shield-lock"></i>
+        <small><strong>CDI</strong></small>
+      </div>
+
+      <div class="info-item d-flex align-items-center gap-1">
+        <small>N0011,28</small>
+      </div>
+
+      <div class="info-item d-flex align-items-center gap-1 text-success align-items-center">
+        <i class="bi bi-graph-up-arrow"></i>
+        <small>%6,13 <i class="bi bi-arrow-up-right"></i></small>
+      </div>
+
+      <div class="info-item d-flex align-items-center gap-1">
+        <small>Sur l’objectif mensuel ></small>
+      </div>
+
+      <div class="vr mx-3"></div>
+
+      <div class="info-item d-flex align-items-center gap-1">
+        <small>Équipe</small>
+        <img src="https://via.placeholder.com/24" alt="Equipe" class="rounded-circle" />
+        <small><strong>Groupe X</strong></small>
+      </div>
+
+      <div class="vr mx-3"></div>
+
+      <div class="info-item">
+        <small>Période du contrat</small>
+        <br />
+        <strong>18 Sep 2025 - 20 Nov 2025</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs px-3">
+    <li
+      *ngFor="let tab of tabs"
+      class="nav-item"
+      (click)="selectTab(tab)"
+    >
+      <a
+        class="nav-link"
+        [class.active]="tab.active"
+        href="javascript:void(0)"
+      >
+        {{ tab.label }}
+        <span *ngIf="tab.badge" class="badge bg-danger ms-1">{{ tab.badge }}</span>
+      </a>
+    </li>
+  </ul>
+</div>

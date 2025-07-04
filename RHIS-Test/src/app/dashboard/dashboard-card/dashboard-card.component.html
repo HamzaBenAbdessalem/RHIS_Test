@@ -1,0 +1,44 @@
+<div class="header-card rounded p-3 shadow-sm bg-white" [ngClass]="customClass">
+  <div class="card-header d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">{{title}}</h5>
+    <button
+      (click)="toggleEdit()"
+      [class.btn-success]="isEditing"
+      [class.text-white]="isEditing"
+      class="btn btn-outline-primary d-flex align-items-center gap-2"
+    >
+      <i class="bi" [class.bi-pencil]="!isEditing" [class.bi-check-lg]="isEditing"></i>
+      <span *ngIf="showText">{{ isEditing ? 'Save' : 'Edit' }}</span>
+    </button>
+  </div>
+
+  <div class="card-body p-0">
+    <div
+      class="data-row d-flex justify-content-between align-items-center px-2 py-2"
+      *ngFor="let row of data"
+      [class.show-edit]="isEditing ||row.isClicked"
+      [class.row-clicked]="row.isClicked"
+      (mouseenter)="row.isHovered = true"
+      (mouseleave)="row.isHovered = false"
+    >
+      <div class="d-flex align-items-center gap-2">
+        <strong>{{ row.label }}</strong>
+      </div>
+      <div class="value-and-edit d-flex align-items-center gap-2 position-relative">
+        <span>{{ row.value }}</span>
+        <i
+          class="bi bi-pencil edit-icon"
+          *ngIf="row.isHovered || isEditing ||row.isClicked"
+
+          (click)="onRowEdit(row)"
+          [title]="isEditing ? 'Edit' : ''"
+        ></i>
+        <i
+          class="bi bi-check edit-icon"
+          *ngIf="row.isClicked || isEditing"
+          (click)="onRowCheck(row)"
+        ></i>
+      </div>
+    </div>
+  </div>
+</div>

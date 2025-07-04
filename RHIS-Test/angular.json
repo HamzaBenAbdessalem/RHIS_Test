@@ -28,11 +28,14 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/content",
+                "output": "/content"
               }
             ],
             "styles": [
-              "src/content/style/styles.scss"
+              "src/content/style/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css"
             ],
             "scripts": []
           },
@@ -87,7 +90,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/content",
+                "output": "/content"
               }
             ],
             "styles": [

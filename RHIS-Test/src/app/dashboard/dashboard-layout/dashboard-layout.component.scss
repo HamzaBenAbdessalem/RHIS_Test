@@ -1,0 +1,27 @@
+.layout-wrapper {
+  //height: 100vh;
+  overflow: hidden;
+  border-radius: 8px 0 0 0;
+  height: fit-content;
+
+  .layout-header {
+    min-height: 60px;
+    background-color: transparent;
+    color: white;
+  }
+
+  .layout-body {
+    overflow: hidden;
+  }
+
+  .layout-sidenav {
+    max-width: 240px;
+    background-color: #111827;
+    color: #fff;
+  }
+
+  .layout-content {
+    background-color: #f9fafb;
+    overflow-y: auto;
+  }
+}

@@ -1,0 +1,50 @@
+.sidebar {
+  width: 64px;
+  background-color: var(--bg-secondary);
+  color: #000;
+  min-height: 100vh;
+  height: 100%;
+  transition: width 0.3s ease;
+  overflow-x: hidden;
+  z-index: 1000;
+
+  &.expanded {
+    width: 200px;
+  }
+
+  .nav-link {
+    color: #000;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: #374151;
+      color: #ffffff;
+    }
+
+    i {
+      font-size: 18px;
+    }
+
+    .label {
+      white-space: nowrap;
+    }
+  }
+}
+.submenu {
+  padding-left: 1rem;
+
+  .sub-link {
+    font-size: 13px;
+    color: #000;
+
+    &:hover {
+      background-color: #4b5563;
+      color: #fff;
+    }
+  }
+}
+
+
+

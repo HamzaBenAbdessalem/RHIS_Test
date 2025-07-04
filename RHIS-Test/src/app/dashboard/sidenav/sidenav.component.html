@@ -1,0 +1,52 @@
+<nav [@slideInOut]="isExpanded ? 'expanded' : 'collapsed'" class="sidebar d-flex flex-column" >
+
+  <div class="p-3">
+    <div class="search-bar d-flex align-items-center mb-3">
+      <i class="bi bi-search me-2"></i>
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        class="form-control border-0 shadow-none"
+        placeholder="Nom, matricule..."
+      />
+      <i class="bi bi-funnel ms-2" *ngIf="isExpanded"></i>
+    </div>
+  </div>
+
+  <!-- Sections -->
+
+  <div *ngFor="let section of sections" >
+    <div class="px-3 section-header d-flex justify-content-between align-items-center text-muted small" (click)="toggleSection(section)">
+      <span>{{ section.title }} ({{ section.employees.length }})</span>
+      <i
+        class="bi"
+        [ngClass]="section.expanded ? 'bi-chevron-down' : 'bi-chevron-right'"
+      ></i>
+    </div>
+
+    <!-- Employee cards -->
+    <div
+      *ngIf="section.expanded"
+      @slideFade
+    >
+      <div
+        class="employee-card"
+        *ngFor="let emp of section.employees"
+        [class.selected]="emp.selected && isExpanded"
+        [class.selected-mini]="!isExpanded && emp.selected"
+        [style.borderColor]="emp.ringColor"
+        (click)="setSelected(section, emp);toggleSidebar()"
+      >
+        <div class="avatar-ring" [style.borderColor]="emp.ringColor" [class.m-0]="!isExpanded">
+          <img [src]="emp.avatar" alt="avatar" />
+          <span class="status-dot" [class]="emp.status"></span>
+        </div>
+        <div class="info" *ngIf="isExpanded">
+          <div class="name">{{ emp.name }}</div>
+          <div class="role text-muted small">{{ emp.role }}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>

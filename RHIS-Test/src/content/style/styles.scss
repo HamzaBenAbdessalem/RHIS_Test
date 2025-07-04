@@ -1,9 +1,18 @@
+@use "colors";
+@use "buttons";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-@import "./colors";
+
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-light);
   color: var(--primary-color);
+  //overflow: hidden;
+}
+.badge{
+  border-radius: 18px !important;
+}
+.bg-custom{
+  background: var(--bg-secondary);
 }
